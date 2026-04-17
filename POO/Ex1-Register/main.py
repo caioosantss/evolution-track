@@ -17,48 +17,19 @@ class Registro:
         f"o artista {self.artista} é o artista numero {self.idartista} e possui as seguintes músicas em sua discografia {self.discografia}"
         )
 
-    def Verifica_musica (self, musica):
-        if musica not in Registro.musicas:
-            return True
-        else:
-            return False 
-
-    def Incluir_Musica(self,musica):
-        if musica not in self.discografia:
-            self.discografia = musica
-
-    @classmethod    
-    def Verifica_artista (cls, artista):
-        if artista not in Registro.Artistas:
-            return True
-        else:
-            return False
-
 
     @classmethod
     def Registrar_artista(cls):
-        #inicia fabrica de objetos
 
-            #registra o artista e uma musica
-            nome = input("digite o nome do artista ")
-            if Registro.Verifica_artista(nome) is True:
-                artista = nome
-
-                #inicia cadastro de musica
-                musica = input("digite uma musica ")
-                
-                if Registro.Verifica_musica(musica) is True:
-                    
-                    Registro.Incluir_Musica(musica)
-                    return(artista)
-
-                else:
-  
-                   return('musica ja incluida na discografia do artista')
+            artista = input("digite o nome do artista ")
+            if artista not in Registro.Artista:
+                Registro.Artistas.append(artista)
             else:
-                #incluir aqui uma forma de introduzir o ID do artista
-                return("artista já registrado")
+                #achar formas de incluir o ID
+                return ("artista ja registrado")
 
-    def Incluir_Musica(self,musica):
+    def Adicionar_Musica(self,musica):
         if musica not in self.discografia:
             self.discografia = musica
+        else:
+            return ("musica ja esta na discografia")
