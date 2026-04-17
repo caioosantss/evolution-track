@@ -2,11 +2,11 @@ class Registro:
     """Classe para gerenciar o catálogo de artistas e suas músicas."""
     idMusicas = 0
     Artistas = []
-    idArtistas = 0
+    idArtistas = 1
     musicas = {}
 
     def __init__(self):
-        self.artista = None
+        self.nome = None
         self.idartista = Registro.idArtistas
         self.idMusica = None
         self.discografia = []
@@ -14,7 +14,7 @@ class Registro:
   
     def __str__(self):
         return (
-        f"o artista {self.artista} é o artista numero {self.idartista} e possui as seguintes músicas em sua discografia {self.discografia}"
+        f"o artista {self.nome} é o artista numero {self.idartista} e possui as seguintes músicas em sua discografia {self.discografia}"
         )
 
     def Registrar_artista(self):
@@ -22,12 +22,15 @@ class Registro:
             artista = input("digite o nome do artista ")
             if artista not in Registro.Artistas:
                 Registro.Artistas.append(artista)
-                self.artista = artista
+                self.nome = artista
                 print(f'o artista {artista} acaba de ser registrado')
                 return artista
-            else:   
-                for i, artista_da_vez in Registro.Artistas(enumerate):
+            else: 
+                #incluir formas de encontrar o ID de artistas já cadastrados
+                print(f'o artista {artista} ja foi registrado')  
+                for i, artista_da_vez in enumerate(Registro.Artistas):
                     if artista_da_vez == artista:
+                        print(f'o artista {artista} ja foi registrado no ID {Registro.Artistas[i]}')
                         return Registro.Artistas[i]
                     
     def Adicionar_Musica(self,musica):
@@ -50,9 +53,11 @@ class Registro:
 if __name__ == "__main__":
 
     while True:
+
         artista = Registro()
 
-        nome = Registro.Registrar_artista()
+
+        nome = Registro.Registrar_artista(artista)
     
         if nome is not False:
             musica = input("qual musica deseja registrar? ")
@@ -63,13 +68,18 @@ if __name__ == "__main__":
             else:
                 artista.Criar_ID()
                 print(artista)
-                
-            pergunta = input("deseja continuar? ")
-            if pergunta == 'n':
+
+            pergunta1 = input("deseja registrar mais musicas? ")
+
+
+            #pergunta referente a continuidade do registro de artistas    
+            pergunta2 = input("deseja continuar? ")
+            if pergunta2 == 'n':
                 break            
             
         else:
             #incluir busca de ID de todos os artistas para mostrar o ID do artista correspondente
             print("artista ja registrado")
         
+       
     
