@@ -8,6 +8,7 @@ class Registro:
         self.nome = None
         self.idartista = Registro.idArtistas
         self.discografia = []
+        self.Musica = None
   
     def __str__(self):
         return (
@@ -38,9 +39,10 @@ class Registro:
                 print("musica adicionada")
                 return False
 
-            if disco in self.discografia:
-                print(f"musica {disco} ja adicionada na discografia no id {Registro.musicas[ID]}")
-                return False
+            else:
+                if disco in self.discografia:
+                    print(f"musica {disco} ja adicionada na discografia no id {Registro.musicas[ID]}")
+                    return False
   
           
     def Criar_ID(self):
