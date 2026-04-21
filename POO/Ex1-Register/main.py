@@ -4,15 +4,19 @@ class Registro:
     idArtistas = 0
     musicas = []
 
+
     def __init__(self):
         self.nome = None
         self.idartista = Registro.idArtistas
+
         self.discografia = []
+
   
     def __str__(self):
         return (
         f"o artista {self.nome} é o artista numero {self.idartista} e possui as seguintes músicas em sua discografia {self.discografia}"
         )
+
 
     def Registrar_artista(self,nome):
         #verifica se o artista ja esta cadastrado
@@ -49,6 +53,7 @@ class Registro:
             self.idartista = Registro.idArtistas
             print(f"ID para o artista {self.nome} criado. ID Nº {self.idartista}")
 
+
             return ('id criado')
         
 if __name__ == "__main__":
@@ -56,6 +61,7 @@ if __name__ == "__main__":
     while True:
 
         artista = Registro()
+
 
         nome = artista.Registrar_artista(input("qual o nome do artista? ").lower())  
     
@@ -74,5 +80,31 @@ if __name__ == "__main__":
             artista.Criar_ID()
             musica = artista.Adicionar_Musica(input("qual musica deseja adcionar? ").lower())
             print(artista.discografia)
+
+
+        nome = Registro.Registrar_artista(artista)
+    
+        if nome is not False:
+            musica = input("qual musica deseja registrar? ")
+            artista.Adicionar_Musica(musica)
+        
+            if musica is False:
+                print("musica ja esta na discografia")
+            else:
+                artista.Criar_ID()
+                print(artista)
+
+            pergunta1 = input("deseja registrar mais musicas? ")
+
+
+            #pergunta referente a continuidade do registro de artistas    
+            pergunta2 = input("deseja continuar? ")
+            if pergunta2 == 'n':
+                break            
+            
+        else:
+            #incluir busca de ID de todos os artistas para mostrar o ID do artista correspondente
+            print("artista ja registrado")
+        
        
     

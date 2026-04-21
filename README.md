@@ -79,6 +79,14 @@ As issues utilizam labels para facilitar organização e filtragem:
 
 Essa estrutura permite visualizar claramente o progresso, separar teoria de prática e navegar pelo repositório de forma eficiente.
 
+## leituras
+
+Aqui ficara o registro de minhas leituras teóricas para o projeto:
+
+ - 'Clean Code – Robert C. Martin' → acho interessante ler alguns fundamentos mais teóricos para consolidar minha lógica
+
+
+
 ---
 
 ##  Filosofia do repositório
