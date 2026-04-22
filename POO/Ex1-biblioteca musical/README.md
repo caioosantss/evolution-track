@@ -1,4 +1,4 @@
-# 🎵 Biblioteca Musical — Exercício 1
+#  Biblioteca Musical — Exercício 1
 
 Exercício de Programação Orientada a Objetos desenvolvido como parte de um plano de estudos estruturado para o mercado de desenvolvimento. O objetivo foi construir um sistema de cadastro de artistas e músicas aplicando conceitos de POO na prática.
 
@@ -47,9 +47,6 @@ Este exercício será retomado futuramente como parte do estudo de banco de dado
 - Separação em duas classes: `Artista` e `Catalogo`
 - Eliminação de atributos de classe mutáveis (`Artistas = []`, `musicas = []`)
 - Persistência dos dados em banco de dados relacional
-- Correção do bug em `Adicionar_Musica` no bloco de duplicata
-- Padronização completa para `snake_case`
-- Geração de ID como processo interno, não método público
 
 ---
 
@@ -64,6 +61,3 @@ Este exercício será retomado futuramente como parte do estudo de banco de dado
 
 ---
 
-## Contexto de Estudo
-
-Este exercício é o primeiro de uma série de três com dificuldade crescente, desenvolvidos com foco em arquitetura básica de sistemas. Os exercícios seguintes introduzem múltiplas classes, Enum, exceptions customizadas e `@classmethod`.
